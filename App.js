@@ -20,7 +20,7 @@ class App extends Component {
 		ContactsApi.remove(contact)
 	}
 
-	createContact(contact) {
+	createBook(book) {
 		ContactsApi.create(contact).then(contact => {
 			this.setState(state => ({
 				contacts:state.contacts.concat([contact])
@@ -36,9 +36,9 @@ class App extends Component {
         onDeleteBook = {this.removeBook}
         />
         )}/>
-        <Route path="/search" render={({history}) => (
+        <Route path="/add" render={({history}) => (
         	<SearchBook 
-        		onBookSearch={(book) => {
+        		onBookAdd={(book) => {
 					this.createBook(book)
 					history.push('/')
 				}}
